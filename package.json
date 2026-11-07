@@ -1,0 +1,22 @@
+{
+  "name": "vue-pjt",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "node --env-file-if-exists=.env --env-file-if-exists=.env.local server/server.js",
+    "build": "vite build",
+    "start": "vite build && node --env-file-if-exists=.env --env-file-if-exists=.env.local server/server.js",
+    "batch:comic": "node --env-file-if-exists=.env --env-file-if-exists=.env.local batch/run-comic.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.0"
+  }
+}

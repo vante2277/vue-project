@@ -1,0 +1,4 @@
+node_modules
+dist
+# 비밀 키(service_role 등)는 여기에 — 커밋되지 않음
+.env.local

@@ -53,7 +53,7 @@ const open = id => {
     <header>
       <RouterLink class="back" to="/">← 홈</RouterLink>
       <h1>피식</h1>
-      <p class="storage">일주일에 한 편, 짧고 웃긴 만화 · 지금까지 {{ posts.length }}편</p>
+      <p class="storage">하루 한 편, 짧고 웃긴 만화 · 지금까지 {{ posts.length }}편</p>
     </header>
 
     <p v-if="error" class="notice error" role="alert">{{ error }}</p>
@@ -62,7 +62,7 @@ const open = id => {
 
     <article v-if="current" class="post">
       <p class="post-meta">
-        <span class="badge">이번 주 피식</span>
+        <span class="badge">오늘의 피식</span>
         <time :datetime="current.date">{{ longDate(current.date) }}</time>
       </p>
       <h2>{{ current.title }}</h2>
@@ -108,10 +108,10 @@ const open = id => {
 
     <details v-if="data" class="batch">
       <summary>
-        배치 실행 기록 <span>매주 {{ data.schedule }} (한국 시간) 자동 수집</span>
+        배치 실행 기록 <span>매일 {{ data.schedule }} (한국 시간) 자동 수집</span>
       </summary>
       <div class="batch-head">
-        <p>이번 주 포스트가 이미 있으면 다시 실행해도 건너뜁니다.</p>
+        <p>오늘 포스트가 이미 있으면 다시 실행해도 건너뜁니다.</p>
         <button class="btn-primary" :disabled="busy" @click="runNow">{{ busy ? '수집 중…' : '지금 실행' }}</button>
       </div>
       <p v-if="!data.runs.length" class="empty">아직 실행 기록이 없습니다</p>
